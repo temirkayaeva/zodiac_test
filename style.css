@@ -10,7 +10,7 @@
 .container {
     /* background-color: rgb(26, 26, 26); */
     animation-name: changeBackground;
-    animation-duration: 8s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
 }
 
