@@ -5,8 +5,11 @@ document.querySelector('button').addEventListener('click', () => {
     let month = document.querySelector('#mm').value;
     let year = document.querySelector('#yyyy').value;
     let result = learnTheZodiac(day, month);
-    let div = document.querySelector('.result');
-    div.innerHTML = result;
+    let zodiac = document.querySelector('.result');
+    zodiac.innerHTML = result;
+    let eastSign = learnTheEastSign(year);
+    let east = document.querySelector('.east-sign');
+    east.innerHTML = eastSign;
     document.querySelector('#dd').value = '';
     document.querySelector('#mm').value = '';
     document.querySelector('#yyyy').value = '';
@@ -106,4 +109,21 @@ function learnTheZodiac(day, month) {
         zodiac = 'Проверьте правильность введенных данных.';
     }
     return zodiac;
+}
+
+function learnTheEastSign(year) {
+    let eastSign;
+    if (year == '') return eastSign = 'Проверьте правильность введенных данных.';
+    if (year % 12 == 0) return eastSign = 'По китайскому гороскопу вы Обезьяна';
+    if (year % 12 == 1) return eastSign = 'По китайскому гороскопу вы Петух';
+    if (year % 12 == 2) return eastSign = 'По китайскому гороскопу вы Собака';
+    if (year % 12 == 3) return eastSign = 'По китайскому гороскопу вы Свинья';
+    if (year % 12 == 4) return eastSign = 'По китайскому гороскопу вы Крыса';
+    if (year % 12 == 5) return eastSign = 'По китайскому гороскопу вы Бык';
+    if (year % 12 == 6) return eastSign = 'По китайскому гороскопу вы Тигр';
+    if (year % 12 == 7) return eastSign = 'По китайскому гороскопу вы Кролик';
+    if (year % 12 == 8) return eastSign = 'По китайскому гороскопу вы Дракон';
+    if (year % 12 == 9) return eastSign = 'По китайскому гороскопу вы Змея';
+    if (year % 12 == 10) return eastSign = 'По китайскому гороскопу вы Лошадь';
+    if (year % 12 == 11) return eastSign = 'По китайскому гороскопу вы Овца';
 }
